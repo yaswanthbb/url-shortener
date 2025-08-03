@@ -23,7 +23,7 @@ def shorten_url():
         return jsonify({"error": "Invalid URL"}), 400
 
     short_code = generate_short_code()
-    while store.get_url(short_code):  # avoid collisions
+    while store.get_url(short_code):
         short_code = generate_short_code()
 
     store.save_url(short_code, original_url)
