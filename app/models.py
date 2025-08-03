@@ -3,7 +3,7 @@ from threading import Lock
 
 class URLStore:
     def __init__(self):
-        self.url_map = {}  # short_code -> {original_url, created_at, clicks}
+        self.url_map = {}
         self.lock = Lock()
 
     def save_url(self, short_code, original_url):
